@@ -1,7 +1,10 @@
 class User:
+    user_list= []
     def __init__(self, first_name,last_name, password ):
-        user_list= []
 
+        self.first_name= first_name
+        self.last_name=last_name
+        self.password= password
 
         '''
         __init__ method helps define properties for our objectsself.
@@ -11,6 +14,11 @@ class User:
             last_name: New user last nameself.
             password: New user password.
         '''
-        self.first_name= first_name
-        self.last_name=last_name
-        self.password= password
+
+
+
+    def save_user(self):
+        '''
+        save user method
+        '''
+        User.user_list.append(self)
