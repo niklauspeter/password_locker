@@ -51,20 +51,38 @@ class TestUserCred(unittest.TestCase):
     unittest.TestCase: helps create test caseself
     '''
     def test_user_check(self):
+
         '''
 		Function to test whether the function for user log in works user_check
 		'''
-		self.new_user = User("joseph","Karanja","yousahaud")
-		self.new_user.save_user()
-		user2 = User("michael","cheng","burudika")
-		user2.save_user()
+        self.new_user = User("joseph","Karanja","yousahaud")
+        self.new_user.save_user()
+        user2 = User("michael","cheng","burudika")
+        user2.save_user()
 
-		for user in User.user_list:
-			if user.first_name == user2.first_name and user.password == user2.password:
-				current_user = user.first_name
-		return current_user
+        for user in User.user_list:
+            if user.first_name == user2.first_name and user.password == user2.password:
+                current_user = user.first_name
+                return current_user
 
-		self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
+                self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
+
+    def setUP(self):
+        '''
+        Function that creates a default account's credentials before each test
+        '''
+        self.new_credential = Credential("niklaus","instagram","Klausmnoma","sikupei")
+
+    def test_init_(self):
+        '''
+        test to check if credential instances have been initialized well
+        '''
+        self.assertEqual(self.new_credential.user_name, "niklaus")
+        self.assertEqual(self.new_credential.site_name, "instagram")
+        self.assertEqual(self.new_credential.account_name, "klausmnoma")
+        self.assertEqual(self.new_credential.password, "niklaus")
+        
+
 
 
 
