@@ -1,3 +1,10 @@
+import pyperclip
+import random
+import string
+
+
+global user_list
+
 class User:
     user_list= []
     def __init__(self, first_name,last_name, password ):
@@ -5,7 +12,6 @@ class User:
         self.first_name= first_name
         self.last_name=last_name
         self.password= password
-
         '''
         __init__ method helps define properties for our objectsself.
 
@@ -14,12 +20,9 @@ class User:
             last_name: New user last nameself.
             password: New user password.
         '''
-
-
-
     def save_user(self):
         '''
-        save user method
+        save user method to add new user instance to list.
         '''
         User.user_list.append(self)
 
@@ -28,3 +31,20 @@ class User:
         delete user method deletes a saved user from user user_list
         '''
         User.user_list.remove(self)
+
+class Credential:
+	'''
+	Class that creates account credentials, generates passwords and saves user information
+	'''
+	credential_list =[]
+	user_credentials_list = []
+	@classmethod
+	def user_check(cls,first_name,password):
+		'''
+		Method that checks if the name and password entered are same as those in the users_list
+		'''
+		current_user = ''
+		for user in User.users_list:
+			if (user.first_name == first_name and user.password == password):
+				current_user = user.first_name
+		return current_user
