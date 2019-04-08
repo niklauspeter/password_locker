@@ -24,8 +24,6 @@ class TestUser(unittest.TestCase):
             '''
             User.user_list = []
 
-
-
     def test_save_user(self):
         '''
         test case to see if user object is saved into the user_list
@@ -45,11 +43,31 @@ class TestUser(unittest.TestCase):
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
 
-    def delete_user(self):
+class TestUserCred(unittest.TestCase):
+    '''
+    test to test for credentials and their respective behaviours self.
+
+    args:
+    unittest.TestCase: helps create test caseself
+    '''
+    def test_user_check(self):
         '''
-        delete user method deletes a saved user from user user_list
-        '''
-        User.user_list.remove(self)
+		Function to test whether the function for user log in works user_check
+		'''
+		self.new_user = User("joseph","Karanja","yousahaud")
+		self.new_user.save_user()
+		user2 = User("michael","cheng","burudika")
+		user2.save_user()
+
+		for user in User.user_list:
+			if user.first_name == user2.first_name and user.password == user2.password:
+				current_user = user.first_name
+		return current_user
+
+		self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
+
+
+
 
 
 if __name__ == '__main__':
