@@ -67,7 +67,7 @@ class TestUserCred(unittest.TestCase):
 
                 self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
 
-    def setUP(self):
+    def setUp(self):
         '''
         Function that creates a default account's credentials before each test
         '''
@@ -81,7 +81,7 @@ class TestUserCred(unittest.TestCase):
         self.assertEqual(self.new_credential.site_name, "instagram")
         self.assertEqual(self.new_credential.account_name, "klausmnoma")
         self.assertEqual(self.new_credential.password, "niklaus")
-        
+
 
 
 
