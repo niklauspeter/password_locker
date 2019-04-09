@@ -122,6 +122,18 @@ def main():
 						print(' ')
 						print(f'Credential Created: Site Name: {site_name} - Account Name: {account_name} - Password: {password}')
 						print(' ')
+					elif short_code == 'dc':
+						print(' ')
+						if displayCredentials(user_name):
+							print('Here is a list of all your credentials')
+							print(' ')
+							for credential in displayCredentials(user_name):
+								print(f'Site Name: {credential.site_name} - Account Name: {credential.account_name} - Password: {credential.password}')
+							print(' ')	
+						else:
+							print(' ')
+							print("You don't seem to have any credentials saved yet")
+							print(' ')
 
 
 			
