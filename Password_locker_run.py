@@ -19,7 +19,7 @@ def verifyUser(first_name,password):
 	'''
 	Function that verifies the existance of the user before creating credentials
 	'''
-	checking_user = Credential.check_user(first_name,password)
+	checking_user = Credential.user_check(first_name,password)
 	return checking_user
 
 def generatePassword():
@@ -53,3 +53,32 @@ def copyCredential(site_name):
 	Function to copy a credentials details to the clipboard
 	'''
 	return Credential.copy_credential(site_name)
+
+def main():
+	print(' ')
+	print('Hello! Welcome to Password Locker.')
+	while True:
+		print(' ')
+		print("-"*60)
+		print('Use these codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
+		short_code = input('Enter a choice: ').lower().strip()
+		if short_code == 'ex':
+			break
+		
+		elif short_code == 'ca':
+			print("-"*60)
+			print(' ')
+			print('To create a new account:')
+			first_name = input('Enter your first name - ').strip()
+			last_name = input('Enter your last name - ').strip()
+			password = input('Enter your password - ').strip()
+			saveUser(createNewUser(first_name,last_name,password))
+			print(" ")
+			print(f'New Account Created for: {first_name} {last_name} using password: {password}')
+
+				
+
+
+			
+if __name__ == '__main__':
+	main()
