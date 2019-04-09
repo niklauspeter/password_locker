@@ -6,13 +6,15 @@ This project was generated with python version 3.6.
 
 ##  Description
 This is a python application, that's run on the terminal.The application allows users to create a password_locker account in which they can store details(credentials) of various other accounts . including passwords and usernames.
-##User Stories
+
+## User Stories
 These include the features that the application allows.
 The user is able to:
 * Create an account with a definite login password
 * store already pre-existing credentials(accounts)
 * Generate password for a new account
-* Copy sabed credentials to the clipboard
+* Copy saved credentials to the clipboard
+
 ## Prerequisites
 To develop the application , youll need to preinstall a few application. including
 * python 3.6
@@ -23,9 +25,8 @@ To develop the application , youll need to preinstall a few application. includi
 * python 3.6 
 
 ## Setup Information
-* clone the application to your local machine .
-* run the application in the terminal with the code ./Password_locker.run.py (the 'p' is in uppercase)
-
+* Clone the application to your local machine .
+* Run the application in the terminal with the code ./Password_locker.run.py (the 'p' is in uppercase)
 
 ## BDD
 |Behavior |Input |Output |
@@ -34,7 +35,7 @@ To develop the application , youll need to preinstall a few application. includi
 |Display prompt that allows account creation|User inputs ca option|option to enter username and password |
 |Displays prompt for loging in| user enters option li|user prompted to enter user name and password|
 |Displays prompt for creating new credential| user enters option cc|user prompted to enter site name, password and other credentials|
-|diplays list of credentials|user inputs dc|printed list of saved credentials appears|
+|Diplays list of credentials|user inputs dc|printed list of saved credentials appears|
 
 ## LICENSE
 MIT License
@@ -61,4 +62,4 @@ SOFTWARE.
 
 
 ## Contact Information
-for any enquiries email me at oriokiklaus@gmail.com or github username niklauspeter
+For any enquiries email me at oriokiklaus@gmail.com or github username niklauspeter
