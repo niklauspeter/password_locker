@@ -54,7 +54,7 @@ class Credential:
 		Method that checks if the name and password entered are same as those in the users_list
 		'''
 		current_user = ''
-		for user in User.users_list:
+		for user in User.user_list:
 			if (user.first_name == first_name and user.password == password):
 				current_user = user.first_name
 		return current_user
@@ -65,7 +65,7 @@ class Credential:
 		'''
 		Function that saves a newly created credential instance
         '''
-		credential.credential_list.append(self)
+		Credential.credential_list.append(self)
 		
 	def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
 		'''
