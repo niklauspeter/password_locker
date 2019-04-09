@@ -51,7 +51,7 @@ class Credential:
 		return current_user
 
     def __init__(self,user_name,site_name,account_name,password):
-        
+
         self.user_name =user_name
         self.site_name= site_name
         self.account_name= account_name
@@ -62,3 +62,10 @@ class Credential:
         Function that saves a newly created credential instance
         '''
         credential.credential_list.append(self)
+
+    def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+		'''
+		Function to generate an 8 character password for a credential
+		'''
+		gen_password=''.join(random.choice(char) for _ in range(size))
+		return gen_password
